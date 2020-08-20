@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+// import './index.css';
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+
+import { BrowserRouter as Router } from "react-router-dom";
+import { RoomProvider } from "./Context";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  // context api for solving props drilling
+  <RoomProvider>
+    {/* Router dom for routing */}
+    <Router>
+      <App />
+    </Router>
+  </RoomProvider>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
